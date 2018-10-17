@@ -1,0 +1,2 @@
+# basictemplate
+make life easier
