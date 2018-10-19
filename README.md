@@ -1,2 +1,2 @@
 # basictemplate
-make life easier
+reports
