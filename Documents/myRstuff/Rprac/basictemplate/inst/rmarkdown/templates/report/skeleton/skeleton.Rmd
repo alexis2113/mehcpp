@@ -1,3 +1,14 @@
+---
+title: "skeleton.Rmd"
+author: '180011028'
+output:
+  pdf_document:
+    extra_dependencies: subfig
+    fig_caption: yes
+    includes: null
+    keep_tex: yes
+    latex_engine: xelatex
+    number_sections: yes
 header-includes:
  \usepackage{booktabs}
  \usepackage{longtable}
