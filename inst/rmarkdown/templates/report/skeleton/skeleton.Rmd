@@ -9,7 +9,6 @@ output:
     keep_tex: yes
     latex_engine: xelatex
     number_sections: yes
-    citation_package: "natbib"
 header-includes:
  \usepackage{booktabs}
  \usepackage{longtable}
@@ -19,16 +18,17 @@ header-includes:
  \usepackage[table]{xcolor}
  \usepackage{wrapfig}
  \usepackage{float}
- \floatplacement{figure}{H!}
+ \floatplacement{figure}{H}
  \usepackage[bottom]{footmisc}
 documentclass: "article"
 fontsize: 11pt
 geometry: margin=1in
 
+
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE,include=FALSE,fig.pos="H!")
+```{r setup, include=FALSE,eval=TRUE}
+knitr::opts_chunk$set(echo = FALSE,fig.pos="H")
 library(tidyverse)
 library(tinytex)
 library(reshape2)
@@ -63,22 +63,6 @@ This following is a block for text in the center,actually, these are just latex 
 haha\footnote{some footnote}haha
 
 
-```{block,type='center',echo=TRUE}
-
-some text in center
-
-```
-
-
-```{block,type='flushright',echo=TRUE}
-
-a block of text in the right
-
-```
-
-
-
-
 
 
 # plots
@@ -87,12 +71,12 @@ You can write plain text in a block like this
 
 
 
-```{r fig.cap="figure names..",fig.keep='all',fig.subcap="more than one graph"}
 
-#more than one graph
+```{r ,fig.cap="hahah",eval=TRUE,fig.height=4}
+
+plot(1:10,1:10)
 
 ```
-
 
 
 
@@ -144,5 +128,4 @@ Evanston, Illinois, USA, https://CRAN.R-project.org/package=psych Version = 1.8.
 ```{r ,highlight=TRUE}
 
 ```
-
 
