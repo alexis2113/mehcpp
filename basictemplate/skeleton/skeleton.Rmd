@@ -1,0 +1,136 @@
+---
+title: "skeleton.Rmd"
+author: '180011028'
+output:
+  pdf_document:
+    extra_dependencies: subfig
+    fig_caption: yes
+    includes: null
+    keep_tex: yes
+    latex_engine: xelatex
+    number_sections: yes
+header-includes:
+ \usepackage{booktabs}
+ \usepackage{longtable}
+ \usepackage{array}
+ \usepackage{enumitem} 
+ \usepackage{multirow}
+ \usepackage[table]{xcolor}
+ \usepackage{wrapfig}
+ \usepackage{float}
+ \floatplacement{figure}{H}
+ \usepackage[bottom]{footmisc}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(tinytex)
+library(reshape2)
+library(knitr)
+library(psych)
+library(broom)  #tidy() all the lm,anovas,tests...
+library(kableExtra)# best tables! but lots of arguments
+library(xtable)# draw table.. a bit ugly
+library(pander)#  ugliest
+library(ggfortify) #autoplot() all the diagnostic plots!
+options(digits = 4)#fix all digits 
+```
+
+```{r ,eval=FALSE}
+kable(df,format = 'latex',booktabs=T,caption = "table name")%>%
+  kable_styling(latex_options = "hold_position")
+stargazer::stargazer() #for math formulas, modles... 
+```
+
+\section*{\centering This is a center title with no number }
+
+# Introduction
+
+
+Also, Rstudio has a lot of addins for grammer checks word counts, picking colors~ "Remedy" is very helpful when making lists...
+
+This following is a block for text in the center,actually, these are just latex syntax..all \emph{pdf} must go through latex first
+
+haha\footnote{some footnote}haha
+
+
+```{block,type='center',echo=TRUE}
+some text in center
+```
+
+
+```{block,type='flushright',echo=TRUE}
+a block of text in the right
+```
+
+
+
+
+
+
+# plots
+
+You can write plain text in a block like this
+
+```{block,echo=TRUE}
+some text
+```
+
+
+
+```{r fig.cap="figure names..",fig.keep='all',fig.subcap="more than one graph"}
+#more than one graph
+```
+
+
+
+
+
+
+
+# Reference
+
+\begin{enumerate}
+
+\item David Robinson and Alex Hayes (2018). broom: Convert Statistical Analysis Objects into Tidy Tibbles. R
+package version 0.5.0. https://CRAN.R-project.org/package=broom
+
+\item Hadley Wickham (2017). tidyverse: Easily Install and Load the 'Tidyverse'. R package version 1.2.1.
+https://CRAN.R-project.org/package=tidyverse
+
+\item Hadley Wickham (2007). Reshaping Data with the reshape Package. Journal of Statistical Software, 21(12),
+1-20. URL http://www.jstatsoft.org/v21/i12/.
+
+\item Masaaki Horikoshi and Yuan Tang (2016). ggfortify: Data Visualization Tools for Statistical Analysis
+  Results. https://CRAN.R-project.org/package=ggfortify
+\item Revelle, W. (2018) psych: Procedures for Personality and Psychological Research, Northwestern University,
+Evanston, Illinois, USA, https://CRAN.R-project.org/package=psych Version = 1.8.4.
+
+\item R Core Team. (2015). R: A language and environment for statistical computing. Vienna, Austria: R Foundation for Statistical Computing.
+
+\item SAS Institute Inc. (2011). Base SAS® 9.3 Procedures Guide. Cary, NY: SAS Institute Inc.
+
+\item Tukey, J. (1991). The Philosophy of Multiple Comparisons. Statistical Science, 6(1), 100-116. Retrieved from http://www.jstor.org/stable/2245714
+
+\item Yihui Xie (2018). knitr: A General-Purpose Package for Dynamic Report Generation in R. R package version
+1.20.
+
+\item Yuan Tang, Masaaki Horikoshi, and Wenxuan Li. "ggfortify: Unified Interface to Visualize Statistical
+  Result of Popular R Packages." The R Journal 8.2 (2016): 478-489.
+
+\end{enumerate}
+  
+# Appendix
+
+## R code
+
+```{r ref.label=knitr::all_labels(echo==FALSE), eval = FALSE}
+ #directly quote all the codes
+```
+
+## SAS code
+
+```{r ,highlight=TRUE}
+```
+
