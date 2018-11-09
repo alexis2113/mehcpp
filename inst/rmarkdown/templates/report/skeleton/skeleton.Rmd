@@ -24,7 +24,7 @@ header-includes:
 documentclass: "article"
 fontsize: 11pt
 geometry: margin=1in
-bibliography: mybibfile.bib
+
 ---
 
 ```{r setup, include=FALSE}
