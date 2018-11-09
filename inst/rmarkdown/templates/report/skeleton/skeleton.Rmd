@@ -19,7 +19,7 @@ header-includes:
  \usepackage[table]{xcolor}
  \usepackage{wrapfig}
  \usepackage{float}
- \floatplacement{figure}{H}
+ \floatplacement{figure}{H!}
  \usepackage[bottom]{footmisc}
 documentclass: "article"
 fontsize: 11pt
@@ -28,7 +28,7 @@ geometry: margin=1in
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE,include=FALSE,fig.pos="H!")
 library(tidyverse)
 library(tinytex)
 library(reshape2)
@@ -53,14 +53,14 @@ stargazer::stargazer() #for math formulas, modles...
 
 \section*{\centering This is a center title with no number }
 
-# Introduction(ref:setup)
+# Introduction
 
 
 Also, Rstudio has a lot of addins for grammer checks word counts, picking colors~ "Remedy" is very helpful when making lists...
 
 This following is a block for text in the center,actually, these are just latex syntax..all \emph{pdf} must go through latex first
 
-haha\footnote{some footnote}haha\citep{pander}
+haha\footnote{some footnote}haha
 
 
 ```{block,type='center',echo=TRUE}
