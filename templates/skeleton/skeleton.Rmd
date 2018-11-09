@@ -23,38 +23,64 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
+library(tinytex)
 library(reshape2)
 library(knitr)
 library(psych)
-library(broom)
-library(ggfortify)
+library(broom)  #tidy() all the lm,anovas,tests...
+library(kableExtra)# best tables! but lots of arguments
+library(xtable)# draw table.. a bit ugly
+library(pander)#  ugliest
+library(ggfortify) #autoplot() all the diagnostic plots!
+options(digits = 4)#fix all digits 
 ```
 
-\section*{\centering Abstract} 
+```{r ,eval=FALSE}
+kable(df,format = 'latex',booktabs=T,caption = "table name")%>%
+  kable_styling(latex_options = "hold_position")
+stargazer::stargazer() #for math formulas, modles... 
+```
 
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-
-
-
-
+\section*{\centering This is a center title with no number }
 
 # Introduction
-```{r cars}
-summary(cars)
+
+
+Also, Rstudio has a lot of addins for grammer checks word counts, picking colors~ "Remedy" is very helpful when making lists...
+
+This following is a block for text in the center,actually, these are just latex syntax..all \emph{pdf} must go through latex first
+
+haha\footnote{some footnote}haha
+
+
+```{block,type='center',echo=TRUE}
+some text in center
 ```
+
+
+```{block,type='flushright',echo=TRUE}
+a block of text in the right
+```
+
+
+
+
+
 
 # plots
 
-You can also embed plots, for example:
+You can write plain text in a block like this
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{block,echo=TRUE}
+some text
+```
+
+
+
+```{r fig.cap="figure names..",fig.keep='all',fig.subcap="more than one graph"}
+#more than one graph
 ```
 
 
@@ -63,11 +89,10 @@ plot(pressure)
 
 
 
+# Reference
 
-
-
-#Reference
 \begin{enumerate}
+
 \item David Robinson and Alex Hayes (2018). broom: Convert Statistical Analysis Objects into Tidy Tibbles. R
 package version 0.5.0. https://CRAN.R-project.org/package=broom
 
@@ -96,13 +121,16 @@ Evanston, Illinois, USA, https://CRAN.R-project.org/package=psych Version = 1.8.
 
 \end{enumerate}
   
-#Appendix
+# Appendix
 
 ## R code
 
 ```{r ref.label=knitr::all_labels(echo==FALSE), eval = FALSE}
-
+ #directly quote all the codes
 ```
 
 ## SAS code
+
+```{r ,highlight=TRUE}
+```
 
